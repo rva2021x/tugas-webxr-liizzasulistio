@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaporate</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- Particle Script -->
+    <script src="../../dist/aframe-particle-system-component.min.js"></script>
+    <!-- A-Frame Extra -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <!-- A-Frame Event Set -->
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+</head>
+<body>
+    <a-scene renderer="colorManagement: true;">
+        <a-sky src="evaporate/white-cloud-blue-sky.jpg"></a-sky>
+        <a-camera position="0 1.5 3">
+            <a-cursor></a-cursor>
+        </a-camera>
+       
+       
+        <a-gltf-model
+            src="evaporate/water_animation/scene.gltf"
+            position="0 0.5 0"
+            rotation="0 180 0"
+            animation-mixer="clip: ; loop: pingpong"
+        ></a-gltf-model>
+    
+        <a-plane
+            color="black"
+            rotation="-90 0 0"
+            scale="50 50 50"
+        ></a-plane>
+      
+
+       <!-- SMOKE -->
+       <a-entity
+       particle-system="preset: default; 
+       texture: ./dist/images/cloud.png;
+       particleCount: 50;
+       color: gray;
+       size: 10;"
+       position="-1 0.5 -5"
+     ></a-entity>
+
+        <a-entity
+        id="modal"
+        geometry="primitive: plane; width: auto; height: auto"
+        material="color: black; opacity:0.8;"
+        position="3 3 -1"
+        text="width: 4;
+        value: Suhu udara yang panas dapat juga menyebabkan air menguap. Proses penguapan ini adalah contoh perubahan benda cair menjadi gas. 
+        Contoh lainnya adalah ketika kita merebus air hingga mendidih (100 derajat Celcius).;"
+        ></a-entity>
+
+<a-gltf-model
+    src="assets/handpainted_wooden_sign/scene.gltf"
+    position="-5 5 -3"
+    link="href: index.html"
+    rotation="0 180 0"
+    scale="0.05 0.05 0.05"
+></a-gltf-model>
+    </a-scene>
+</body>
+</html>
