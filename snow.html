@@ -12,8 +12,6 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <!-- A-Frame Event Set -->
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
- 
-
 </head>
 <body>
     <a-scene id="snowScene">
@@ -54,12 +52,12 @@
         ></a-gltf-model>
 
         <!-- SNOWFLAKES -->
-        <!-- <a-entity 
+        <a-entity 
             position="0 2.25 -15" 
             particle-system="
                 preset: snow;
                 particleCount: 10000"
-        ></a-entity> -->
+        ></a-entity>
 
         <a-plane
             src="#basePlane"
@@ -83,17 +81,26 @@
         <a-gltf-model
             id="snowman"
             src="snow/snowman/scene.gltf"
-            position="-2 1 -2"
-            scale="0.1 0.1 0.1"
+            position="-3 0.1 -1"
+            scale="0.2 0.2 0.2"
             rotation="0 -90 0"
         ></a-gltf-model>
 
-        <a-image
-            position="-2 3 -3"
-            src="home.png"
+        <a-gltf-model
+            id="tree1"
+            src="snow/laurel_tree_-_low_poly/scene.gltf"
+            position="4 -1 -2"
+            scale="0.01 0.01 0.01"
+            rotation="0 -90 0"
+        ></a-gltf-model>
+
+        <a-gltf-model
+            src="assets/handpainted_wooden_sign/scene.gltf"
+            position="-5 5 -3"
             link="href: index.html"
-            scale="0.5 0.5 0.5"
-            >
+            rotation="0 180 0"
+            scale="0.05 0.05 0.05"
+        ></a-gltf-model>
 
     </a-scene>
     

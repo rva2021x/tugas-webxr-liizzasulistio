@@ -1,0 +1,11 @@
+Model Information:
+* title:	Korail Vending Machine
+* source:	https://sketchfab.com/3d-models/korail-vending-machine-72ce292e1bd945aea580d223c75a870e
+* author:	bolinas (https://sketchfab.com/bolinas)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Korail Vending Machine" (https://sketchfab.com/3d-models/korail-vending-machine-72ce292e1bd945aea580d223c75a870e) by bolinas (https://sketchfab.com/bolinas) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
