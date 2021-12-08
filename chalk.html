@@ -4,9 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chalk</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- Particle Script -->
+    <script src="../../dist/aframe-particle-system-component.min.js"></script>
+    <!-- A-Frame Extra -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <!-- A-Frame Event Set -->
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
 </head>
 <body>
-    
+    <a-scene fog="type: linear; color: #FFFFFF">
+        <a-sky color="black"></a-sky>
+        <a-camera position="0 1.5 3">
+            <a-cursor></a-cursor>
+        </a-camera>
+        <a-assets>
+            <img src="assets/Wood_022_SD/Wood_022_basecolor.jpg" id="basePlane">
+            <img src="assets/Wood_022_SD/Wood_022_normal.jpg" id="normalPlane">
+            <img src="assets/Wood_022_SD/Wood_022_height.png" id="heightPlane">
+        </a-assets>
+        <a-plane
+            src="#basePlane"
+            normal-map="#normalPlane"
+            rotation="-90 0 0"
+            scale="50 50 50"
+        ></a-plane>
+
+        <!-- CHALK -->
+        <a-gltf-model
+            id="chalk"
+            src="chalk/chalk_from_poly_by_google/scene.gltf"
+            position="0 0.5 -1"
+            scale="0.05 0.05 0.05"
+
+            event-set__mouseenter="
+                __event: mouseenter;
+                _target: #modal;
+                visible: true;"
+
+            event-set__mouseleave="
+            __event: mouseleave;
+            _target: #modal;
+            visible: false;"
+        ></a-gltf-model>
+
+        <!-- SMOKE -->
+        <a-entity
+            particle-system="preset: default; 
+            texture: ./dist/images/cloud.png;
+            particleCount: 50;
+            color: #ffffff;
+            size: 10;
+            velocityValue: 0 10 0"
+            position="-1 0.5 -5"
+        ></a-entity>
+
+        <a-entity
+            id="modal"
+            geometry="primitive: plane; width: auto; height: auto"
+            material="color: black; opacity:0.8;"
+            visible="false"
+            position="1 2 -1"
+            text="width: 4;
+            value: Kapur barus merupakan salah satu contoh dari proses perubahan benda padat menjadi gas. 
+            Proses yang dinamakan menyublim ini dapat terjadi apabila suatu benda padat menerima kalor. 
+            Contoh peristiwa menyublim lainnya adalah dry ice dan pengharum ruangan padat.;"
+        ></a-entity>
+
+        <a-gltf-model
+            src="assets/handpainted_wooden_sign/scene.gltf"
+            position="-5 5 -3"
+            link="href: index.html"
+            rotation="0 180 0"
+            scale="0.05 0.05 0.05"
+        ></a-gltf-model>
+    </a-scene>
 </body>
 </html>
