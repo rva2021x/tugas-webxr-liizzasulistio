@@ -262,12 +262,104 @@
             position="3 0.1 -3"
             rotation="-90 0 0"
             scale="0.5 0.5 0.5"
+
+            event-set__click="
+                __event: click;
+                _target: #containerGAS;
+                visible: true;
+            "
         ></a-circle>
-        <!-- <a-link
-            href="snow.html"
-            position="-3 0.1 -3"
+       
+        <a-entity
+        id="containerGAS"
+        geometry="primitive: plane; width: 5; height: 4;"
+        material="color: gray; opacity: 1"
+        position="3 2 -5"
+        visible="false">
+        <a-text
+            color="black"
+            position="-2 1 0"
+            width="4"
+            value="Benda gas dapat berubah menjadi 2 wujud ketika menerima kalor atau melepaskan kalor. 
+            Susunan partikel dari benda gas sangatlah renggang.
+            Adapun susunan partikel pada benda gas dapat dilihat di bawah ini:"
+        ></a-text>
+
+        <!-- SOLID PARTICLE -->
+        <a-sphere
+            color="red"
+            position="-1 -0.1 1"
+            radius="0.1"
+        ></a-sphere>
+        <a-sphere
+            color="red"
+            position="-0.6 -0.1 1"
+            radius="0.1"
+        ></a-sphere>
+        <a-sphere
+            color="red"
+            position="-0.2 -0.1 1"
+            radius="0.1"
+        ></a-sphere>
+
+        <a-sphere
+            color="red"
+            position="-1 -0.5 1"
+            radius="0.1"
+        ></a-sphere>
+        <a-sphere
+            color="red"
+            position="-0.6 -0.5 1"
+            radius="0.1"
+        ></a-sphere>
+        <a-sphere
+            color="red"
+            position="-0.2 -0.5 1"
+            radius="0.1"
+        ></a-sphere>
+
+        <a-sphere
+            color="red"
+            position="-1 -0.9 1"
+            radius="0.1"
+        ></a-sphere>
+        <a-sphere
+            color="red"
+            position="-0.6 -0.9 1"
+            radius="0.1"
+        ></a-sphere>
+        <a-sphere
+            color="red"
+            position="-0.2 -0.9 1"
+            radius="0.1"
+        ></a-sphere>
+
+        <a-image
+            src="assets/liquid.png"
+            position="0.5 -0.5 0.1"
             scale="0.5 0.5 0.5"
-        ></a-link> -->
+            link="href: tea.html">
+            <a-text
+            color="black"
+            position="-0.5 -0.7 0"
+            width="4"
+            value="Mengembun"></a-text>   
+        </a-image>
+        <a-image
+            src="assets/solid.png"
+            position="1.5 -0.5 0.1"
+            scale="0.5 0.5 0.5"
+            link="href: snow.html">
+            <a-text
+            color="black"
+            position="-0.5 -0.7 0"
+            width="4"
+            value="Mengkristal">
+            </a-text>
+        </a-image>
+    </a-entity>
+
+
     </a-scene>
 </body>
 </html>
