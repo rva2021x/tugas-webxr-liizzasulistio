@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perubahan Wujud Zat</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <!-- Script for using A-Frame GUI -->
-    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
     <!-- A-Frame Extra -->
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <!-- A-Frame Event Set -->
@@ -28,20 +26,6 @@
             rotation="-90 0 0"
             scale="50 50 50"
         ></a-plane>
-        <!-- <a-plane
-            color="#222"
-            position="-5 0 0"
-            rotation="0 -90 0"
-            scale="10 10 10"
-        ></a-plane>
-        <a-plane
-            color="#222"
-            position="0 4 -5"
-            rotation="0 0 0"
-            scale="10 8 10"
-        ></a-plane> -->
-
- 
 
         <!-- SOLID -->
         <a-gltf-model
@@ -167,7 +151,101 @@
             position="0 0.1 -3"
             rotation="-90 0 0"
             scale="0.5 0.5 0.5"
+
+            event-set__click="
+            __event: click;
+            _target: #containerLIQUID;
+            visible: true;
+            "
         ></a-circle>
+        <a-entity
+            id="containerLIQUID"
+            geometry="primitive: plane; width: 5; height: 4;"
+            material="color: gray; opacity: 1"
+            position="0 2 -5"
+            visible="false">
+            <a-text
+                color="black"
+                position="-2 0.7 0"
+                width="4"
+                value="Benda cair dapat berubah menjadi 2 wujud yang berbeda apabila menerima kalor dan melepaskan kalor. 
+                Susunan partikel pada benda cair sedikit lebih renggang dibandingkan benda padat.
+                Adapun susunan partikel pada benda cair dapat dilihat di bawah ini:"
+            ></a-text>
+
+            <!-- SOLID PARTICLE -->
+            <a-sphere
+                color="red"
+                position="-1 -0.3 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.7 -0.3 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.4 -0.3 1"
+                radius="0.1"
+            ></a-sphere>
+
+            <a-sphere
+                color="red"
+                position="-1 -0.55 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.7 -0.55 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.4 -0.55 1"
+                radius="0.1"
+            ></a-sphere>
+
+            <a-sphere
+                color="red"
+                position="-1 -0.8 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.7 -0.8 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.4 -0.8 1"
+                radius="0.1"
+            ></a-sphere>
+
+            <a-image
+                src="assets/solid.png"
+                position="0 -0.5 0.1"
+                scale="0.5 0.5 0.5"
+                link="href: icecream.html">
+                <a-text
+                color="black"
+                position="-0.4 -0.7 0"
+                width="4"
+                value="Membeku"></a-text>   
+            </a-image>
+            <a-image
+                src="assets/gas.png"
+                position="1 -0.5 0.1"
+                scale="0.5 0.5 0.5"
+                link="href: evaporate.html">
+                <a-text
+                color="black"
+                position="-0.4 -0.7 0"
+                width="4"
+                value="Menguap">
+                </a-text>
+            </a-image>
+        </a-entity>
 
 
         <!-- GAS -->
