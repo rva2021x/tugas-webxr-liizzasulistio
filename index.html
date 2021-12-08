@@ -6,12 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perubahan Wujud Zat</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <!-- Script for using A-Frame GUI -->
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
 </head>
 <body>
     <a-scene>
+        <a-entity id="Locomotion">
+            <a-camera
+                movement-controls="controls:checkpoint"
+                checkpoint-controls="mode:teleport;"
+                
+                >
+                <a-cursor></a-cursor>
+            </a-camera>
+        </a-entity>
         <a-plane
-        
+            color="#222"
+            rotation="-90 0 0"
+            scale="10 10 10"
         ></a-plane>
+
+        <!-- First Place -->
+        <a-gui-flex-container
+            color="#222"
+            opacity="0.5"
+            position="-3 2 -5"
+        >
+
+        </a-gui-flex-container>
+        <a-circle 
+            checkpoint="offset: 0 1.5 0"
+            color="blue"
+            position="-3 0.1 -3"
+            rotation="-90 0 0"
+            scale="0.5 0.5 0.5"
+        ></a-circle>
+        <a-circle 
+        checkpoint
+            color="red"
+            position="0 0.1 -3"
+            rotation="-90 0 0"
+            scale="0.5 0.5 0.5"
+        ></a-circle>
+        <a-circle 
+        checkpoint
+            color="yellow"
+            position="3 0.1 -3"
+            rotation="-90 0 0"
+            scale="0.5 0.5 0.5"
+        ></a-circle>
+        <!-- <a-link
+            href="snow.html"
+            position="-3 0.1 -3"
+            scale="0.5 0.5 0.5"
+        ></a-link> -->
     </a-scene>
 </body>
 </html>
