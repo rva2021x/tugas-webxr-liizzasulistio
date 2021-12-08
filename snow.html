@@ -8,15 +8,20 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <!-- Particle Script -->
     <script src="../../dist/aframe-particle-system-component.min.js"></script>
-    <!-- <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script> -->
     <!-- A-Frame Extra -->
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <!-- A-Frame Event Set -->
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+ 
+
 </head>
 <body>
     <a-scene id="snowScene">
-        <a-sky color="black"></a-sky>
-        <a-camera position="0 1.5 3"></a-camera>
-
+        <a-sky src="snow/snowy-landscape.jpg"></a-sky>
+        <a-camera position="0 1.5 3">
+            <a-cursor></a-cursor>
+        </a-camera>
+      
         <a-assets>
             <img src="snow/Snow_003_SD/Snow_003_COLOR.jpg" id="basePlane">
             <img src="snow/Snow_003_SD/Snow_003_NRM.jpg" id="normalPlane">
@@ -36,20 +41,59 @@
                 dur: 2000;
                 loop: true;
             "
+            event-set__mouseenter="
+                __event: mouseenter;
+                _target: #modal;
+                visible: true;
+            "
+
+            event-set__mouseleave="
+                __event: mouseleave;
+                _target: #modal;
+                visible: false;"
         ></a-gltf-model>
 
-        <a-entity 
+        <!-- SNOWFLAKES -->
+        <!-- <a-entity 
             position="0 2.25 -15" 
             particle-system="
                 preset: snow;
-                particleCount: 5000"></a-entity>
+                particleCount: 10000"
+        ></a-entity> -->
 
         <a-plane
             src="#basePlane"
             normal-map="#normalPlane"
+            position="0 0 0"
             rotation="-90 0 0"
-            scale="10 10 10"
+            scale="100 100 100"
         ></a-plane>
+
+        <a-entity
+            id="modal"
+            geometry="primitive: plane; width: auto; height: auto"
+            material="color: black; opacity:0.8;"
+            visible="false"
+            position="0 1 -3"
+            text="width: 4;
+            value: Salju merupakan salah satu contoh perubahan benda gas menjadi padat. Salju ini akan muncul apabila suhu pada awan berada di bawah titik beku (0 derajat celcius). Salju ini terbentuk karena uap air di udara berkondensasi langsung tanpa melalui tahap pencairan.
+            Salju dapat ditemukan di Antartika, Selandia Baru, dan beberapa negara lainnya terutama ketika musim dingin.;"
+        ></a-entity>
+
+        <a-gltf-model
+            id="snowman"
+            src="snow/snowman/scene.gltf"
+            position="-2 1 -2"
+            scale="0.1 0.1 0.1"
+            rotation="0 -90 0"
+        ></a-gltf-model>
+
+        <a-image
+            position="-2 3 -3"
+            src="home.png"
+            link="href: index.html"
+            scale="0.5 0.5 0.5"
+            >
 
     </a-scene>
     

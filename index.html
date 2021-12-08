@@ -9,9 +9,14 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <!-- Script for using A-Frame GUI -->
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <!-- A-Frame Extra -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <!-- A-Frame Event Set -->
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
 </head>
 <body>
     <a-scene>
+        <a-sky color="blue"></a-sky>
         <a-entity id="Locomotion"
             movement-controls="controls:checkpoint"
             checkpoint-controls="mode:teleport;">
@@ -22,7 +27,7 @@
         <a-plane
             color="#222"
             rotation="-90 0 0"
-            scale="20 20 20"
+            scale="50 50 50"
         ></a-plane>
         <!-- <a-plane
             color="#222"
@@ -37,31 +42,146 @@
             scale="10 8 10"
         ></a-plane> -->
 
-        <!-- First Place -->
-        <a-gui-flex-container
-            panel-color="black"
-            opacity="0.5"
-            position="-3 2 -5"
-        >
+ 
 
-        </a-gui-flex-container>
+        <!-- SOLID -->
+        <a-gltf-model
+            id="solid3D"
+            src="assets/low_poly_wood_barrel/scene.gltf"
+            position="-3 2.5 -3"
+            scale="0.003 0.003 0.003"
+        ></a-gltf-model>
         <a-circle 
             checkpoint="offset: 0 0 0"
-            color="blue"
+            color="gray"
             position="-3 0.1 -3"
             rotation="-90 0 0"
             scale="0.5 0.5 0.5"
+
+            event-set__click="
+                __event: click;
+                _target: #containerSOLID;
+                visible: true;
+            "
         ></a-circle>
+
+        <a-entity
+            id="containerSOLID"
+            geometry="primitive: plane; width: 5; height: 3;"
+            material="color: gray; opacity: 1"
+            position="-3 2 -5"
+            visible="false">
+            <a-text
+                color="black"
+                position="-2 0.5 0"
+                width="4"
+                value="Benda padat dapat berubah menjadi 2 bentuk jika menerima kalor, yaitu mencair dan menyublim.
+                Susunan partikel pada benda padat sangatlah rapat.
+                Adapun susunan partikel pada benda padat dapat dilihat di bawah ini:"
+            ></a-text>
+
+            <!-- SOLID PARTICLE -->
+            <a-sphere
+                color="red"
+                position="-1 -0.3 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.75 -0.3 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.5 -0.3 1"
+                radius="0.1"
+            ></a-sphere>
+
+            <a-sphere
+                color="red"
+                position="-1 -0.5 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.75 -0.5 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.5 -0.5 1"
+                radius="0.1"
+            ></a-sphere>
+
+            <a-sphere
+                color="red"
+                position="-1 -0.7 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.75 -0.7 1"
+                radius="0.1"
+            ></a-sphere>
+            <a-sphere
+                color="red"
+                position="-0.5 -0.7 1"
+                radius="0.1"
+            ></a-sphere>
+
+            <a-image
+                src="assets/liquid.png"
+                position="0 -0.5 0.1"
+                scale="0.5 0.5 0.5"
+                link="href: candle.html">
+                <a-text
+                color="black"
+                position="-0.3 -0.7 0"
+                width="4"
+                value="Mencair"></a-text>   
+            </a-image>
+            <a-image
+                src="assets/gas.png"
+                position="1 -0.5 0.1"
+                scale="0.5 0.5 0.5"
+                link="href: chalk.html">
+                <a-text
+                color="black"
+                position="-0.4 -0.7 0"
+                width="4"
+                value="Menyublim">
+                </a-text>
+            </a-image>
+        </a-entity>
+
+
+        <!-- LIQUID -->
+        <a-gltf-model
+            id="liquid3D"
+            src="assets/flat_drop_low-poly/scene.gltf"
+            position="0 2.5 -3"
+            scale="0.7 0.7 0.7"
+        ></a-gltf-model>
         <a-circle 
-        checkpoint
-            color="red"
+            checkpoint="offset: 0 0 0"
+            color="gray"
             position="0 0.1 -3"
             rotation="-90 0 0"
             scale="0.5 0.5 0.5"
         ></a-circle>
+
+
+        <!-- GAS -->
+        <a-gltf-model
+            id="gas3D"
+            src="assets/cloud1/scene.gltf"
+            position="3 3 -3"
+            scale="0.1 0.1 0.1"
+            rotation="0 -90 0"
+        ></a-gltf-model>
         <a-circle 
-        checkpoint
-            color="yellow"
+            checkpoint="offset: 0 0 0"
+            color="gray"
             position="3 0.1 -3"
             rotation="-90 0 0"
             scale="0.5 0.5 0.5"
